@@ -1,0 +1,157 @@
+/* Asosiy konteyner */
+.login-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+/* Orqa fon rasmi */
+.background-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.3) blur(3px);
+}
+
+/* Login oynasi */
+.login-box {
+  position: relative;
+  z-index: 2;
+  background: rgb(15, 21, 27);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+/* Kirish sarlavhasi */
+.login-title {
+  font-size: 2.5rem;
+  color: #00fff2;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+/* Inputlar */
+.login-form input {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.7rem 0;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+  box-shadow: 0 0 15px #05ffe2;
+  background: rgba(242, 237, 237, 0.2);
+}
+
+/* Kirish tugmasi */
+.login-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-top: 1.2rem;
+  background: linear-gradient(135deg, #f0eeee, #cdc8c7);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 0 10px #e4e2e2;
+}
+
+.login-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(58, 2, 243, 0.6);
+  background: linear-gradient(135deg, #061ef8, #0632f5);
+}
+
+/* Xatolik xabari */
+.error-message {
+  color: #ff7272;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* Yopish tugmasi */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.5s ease, color 0.5s ease;
+  z-index: 3;
+}
+
+.close-btn:hover {
+  animation: rainbow-spin 1.5s ease;
+  color: #fff700;
+  text-shadow: 0 0 10px #fff700;
+}
+
+/* Kirish animatsiyasi */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Yopish tugmasidagi kamalak animatsiyasi */
+@keyframes rainbow-spin {
+  0% {
+    transform: rotate(0deg);
+    text-shadow: 0 0 5px red;
+  }
+  25% {
+    text-shadow: 0 0 10px orange;
+  }
+  50% {
+    transform: rotate(180deg);
+    text-shadow: 0 0 15px yellow;
+  }
+  75% {
+    text-shadow: 0 0 20px green;
+  }
+  100% {
+    transform: rotate(360deg);
+    text-shadow: 0 0 25px blue;
+  }
+}
+
+/* Yopishdan keyingi sahifani yo'qotish */
+.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}

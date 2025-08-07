@@ -1,0 +1,84 @@
+/* === Game Section Styles === */
+.games-section {
+  padding: 4rem 2rem;
+  background-color: transparent; /* qora fon olib tashlandi */
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.games-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00ffcc;
+}
+
+.games-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.game-card {
+  background: rgba(31, 31, 31, 0.1); /* shaffof oyna */
+  backdrop-filter: blur(15px) saturate(140%);
+  -webkit-backdrop-filter: blur(15px) saturate(140%);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+}
+
+.game-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 2px solid #00ffcc;
+}
+
+.game-info {
+  padding: 1rem;
+}
+
+.game-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #00ffcc;
+}
+
+.game-info p {
+  margin: 0.3rem 0;
+}
+
+/* === Aylanadigan yorug'lik effekt === */
+.glow-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(0, 255, 204, 0.6), transparent 70%);
+  border-radius: 50%;
+  animation: floatAround 12s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(10px);
+}
+
+/* Aylanadigan effekt animatsiyasi */
+@keyframes floatAround {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(300px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(300px) rotate(-360deg);
+  }
+}

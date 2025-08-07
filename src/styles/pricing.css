@@ -1,0 +1,107 @@
+/* Har bir tarif kartasi */
+.plan-card {
+  position: relative;
+  width: 280px;
+  padding: 2rem 1.5rem;
+  border-radius: 18px;
+  color: #f1f1f1;
+  background: rgba(17, 2, 2, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* Kartalar konteyneri */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+
+/* Bosganda sariq nur tarqalsin */
+.plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.25), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.plan-card:active::before {
+  opacity: 1;
+}
+
+/* Hoverda effektli ko‘rinish */
+.plan-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3), 0 0 10px rgba(40, 167, 69, 0.3);
+  border-color: #28a745;
+}
+
+/* Ichidagi kontent ustiga chiqsin */
+.plan-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Karta sarlavhasi */
+.plan-card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  color: #fdd835; /* sariq */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-family: 'Orbitron', sans-serif; /* Gamer-like font (Google Fonts) */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Yozuvlar */
+.plan-card .angle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffffcc;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+}
+
+/* Aktiv karta */
+.plan-card.active {
+  background: rgba(255, 255, 0, 0.08);
+  border: 1px solid #fdd835;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+.plan-card:active {
+  transform: scale(0.98);
+  box-shadow: 
+    0 0 20px 5px rgba(255, 223, 0, 0.6),
+    0 0 40px 10px rgba(255, 223, 0, 0.4),
+    0 0 60px 15px rgba(250, 223, 0, 0.2);
+  transition: box-shadow 0.2s ease;
+}
+
+
+
+/* Tanlangan belgisi */
+.badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: #fdd835;
+  color: #111;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

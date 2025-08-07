@@ -1,0 +1,117 @@
+/* Asosiy konteyner: xona (zal) lar */
+.computer-rooms {
+  padding: 2rem;
+  background-color: #1e1e2f;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Har bir xona (zal) konteyneri */
+.room-section {
+  margin-bottom: 3rem;
+}
+
+.room-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #00ffd0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Kompyuterlar grid holatda */
+.computer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Kompyuter karta (ComputerCard.jsx dan) */
+.computer-card {
+  background-color: #2a2a3d;
+  border-radius: 12px;
+  border: 2px solid #444;
+  padding: 1rem;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.computer-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Onlayn/offlayn border ranglari */
+.computer-card.online {
+  border-color: #4ade80; /* green-400 */
+}
+
+.computer-card.offline {
+  border-color: #f87171; /* red-400 */
+}
+
+/* Tugmalar */
+.control-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.control-buttons button {
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.control-buttons .start-btn {
+  background-color: #22c55e;
+}
+
+.control-buttons .start-btn:hover {
+  background-color: #16a34a;
+}
+
+.control-buttons .stop-btn {
+  background-color: #ef4444;
+}
+
+.control-buttons .stop-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Vaqt belgisi */
+.time-left {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: bold;
+  color: #fbbf24; /* amber-400 */
+  animation: pulseTime 1.5s infinite;
+}
+
+@keyframes pulseTime {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .computer-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
